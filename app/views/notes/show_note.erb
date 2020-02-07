@@ -2,7 +2,7 @@
 <p><%= @note.content %>
 
 
-<form method="post" action="/notes/<%=@note.id%>/delete">
+<form method="post" action="/note/<%=@note.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Content">
 </form>

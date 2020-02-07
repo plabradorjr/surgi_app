@@ -83,5 +83,18 @@ class NotesController < ApplicationController
       "You cant edit this, only creators of this content can edit this" #temporary, will edit later
   end
 
+  delete '/note/:id/delete' do
+    if logged_in?
+      @note = Note.find_by_id(params[:id])
+      if @note && @note.user == current_user
+        @note.delete
+      end
+      redirect to '/home'
+    else
+      redirect to '/login'
+    end
+  end
+
+
 
 end 
