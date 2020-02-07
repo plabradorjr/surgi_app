@@ -9,5 +9,14 @@ class NotesController < ApplicationController
     end
   end
 
+  get '/page/new' do
+    if logged_in?
+      erb :'notes/create_note'
+    else
+      redirect to '/login'
+    end
+  end
+
+
 
 end 
