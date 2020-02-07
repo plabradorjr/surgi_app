@@ -1,0 +1,8 @@
+<p><%= @note.topics %>
+
+<form method="post" action="/notes/<%=@note.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Content">
+</form>
+
+<a href="/notes/<%=@note.id%>/edit">Edit Contents </a>
