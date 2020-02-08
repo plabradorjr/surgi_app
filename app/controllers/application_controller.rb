@@ -11,6 +11,10 @@ configure do
     erb :index
   end
 
+  get '/sandbox' do
+    erb :sandbox
+  end
+
   helpers do
 
     def logged_in?
