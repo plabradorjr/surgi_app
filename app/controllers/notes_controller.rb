@@ -50,7 +50,7 @@ class NotesController < ApplicationController
       if @note && @note.user == current_user
         erb :'notes/edit_note'
       else
-        redirect to '/home' #temporary redirect
+        redirect to '/prohibited' #temporary redirect
       end
     else
       redirect to '/login'
@@ -64,14 +64,14 @@ class NotesController < ApplicationController
         redirect to "/note/#{params[:id]}/edit"
       else
         @note = Note.find_by_id(params[:id])
-        if @note && @note.user == current_user
+        if @note && (@note.user == current_user)
           if @note.update(content: params[:content], topics: params[:topics])
             redirect to "/note/#{@note.id}"
           else
             redirect to "/note/#{@note.id}/edit"
           end
         else
-          redirect to '/prohibited' #temp redirect
+          redirect to '/home'
         end
       end
     else
@@ -88,8 +88,9 @@ class NotesController < ApplicationController
       @note = Note.find_by_id(params[:id])
       if @note && @note.user == current_user
         @note.delete
+      else 
+        redirect to '/prohibited'
       end
-      redirect to '/home'
     else
       redirect to '/login'
     end
