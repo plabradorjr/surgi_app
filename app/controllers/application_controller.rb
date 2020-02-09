@@ -8,7 +8,12 @@ configure do
   end
 
   get '/' do
-    erb :index
+    if !logged_in?
+      erb :index
+    else
+      redirect to '/home'
+    end
+    
   end
 
   get '/sandbox' do

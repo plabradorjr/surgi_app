@@ -110,6 +110,15 @@
     flex-direction: column;
 }
 
+.pl-search-padding {
+    padding-top: 40px;
+}
+
+footer {
+    height: 80px;
+    width: 100%;
+}
+
 @media (min-width: 576px) {
     .pl-px {
         padding-left: 2.75rem !important;
