@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SurgiApp</title>
-  <link rel="stylesheet" href="../../stylesheets/bootstrap.min.css">
-  <link rel="stylesheet" href="../../stylesheets/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../stylesheets/pl-styles.css">
+  <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../stylesheets/pl-styles.css">
 </head>
 <main>
 
@@ -24,36 +24,13 @@
     </div>
   </nav>
 
-
-  <div class="container">
-    <br><br><br><br><br><br>
-    <h4>Edit this card.</h4><br>
-
-    <form action="/note/<%=@note.id%>" method="POST">
-      <input id="hidden" type="hidden" name="_method" value="PATCH">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="boxfortopic" id="inputGroup-sizing-default">Instrument</label>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+        <br><br><br><h5>Sorry, only the original creator of that card can delete it.</h5>
         </div>
-        <input type="text" name="topics" id="boxfortopic" class="form-control" value="<%= @note.topics %>" >
-      </div>
-
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label style="height: 300px;" class="input-group-text" for="descbox">Location</label>
-        </div>
-        <textarea type="text" name="content" id="descbox" class="form-control"><%= @note.content %> </textarea>
-      </div>
-
-      <input class="btn btn-lg btn-primary" type="submit" value="submit">
-
-    </form>
-    
-  </div>
-
-
-
+    </div>     
+</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -70,4 +47,5 @@
 </main>
 
 </html>
+
 
