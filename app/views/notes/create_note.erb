@@ -20,7 +20,7 @@
 
       <form class="form-inline my-2 my-lg-0">
           <a class="nav-link text-light" href="/note/new" role="button">Create</a>
-          <a class="nav-link text-light" href="#" role="button">Pages</a>
+          <a class="nav-link text-light" href="#" role="button">Cards</a>
           <a class="nav-link text-light mr-3" href="#" role="button">Profile</a>
           <a class="btn btn-outline-light my-2 my-sm-0" href="/logout" role="button">Log out</a>
       </form>
@@ -29,13 +29,13 @@
 
   <div class="container">
     <br><br><br><br><br><br>
-    <h4>Create a page.</h4><br>
+    <h4>Create a card.</h4><br>
 
     <form action="/notes" method="POST">
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label class="input-group-text" for="boxfortopic" id="inputGroup-sizing-default">Subject or Instrument</label>
+          <label class="input-group-text" for="boxfortopic" id="inputGroup-sizing-default">Instrument</label>
         </div>
         <input type="text" name="topics" id="boxfortopic" class="form-control">
       </div>
@@ -43,7 +43,7 @@
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <label style="height: 300px;" class="input-group-text" for="descbox">Description or Location of Instrument</label>
+          <label style="height: 300px;" class="input-group-text" for="descbox">Location</label>
         </div>
         <textarea type="text" name="content" id="descbox" class="form-control"></textarea st>
       </div>
@@ -51,9 +51,6 @@
       <input class="btn btn-lg btn-primary" type="submit" value="submit">
 
     </form>
-
-
-
 
   </div>
 
@@ -80,19 +77,3 @@
 </html>
 
 
-
-
-
-
-
-
-
-
-
-        <!-- <h2>Creating a page!</h2>
-        <h4>To continue, start typing in the box below</h4>
-        <form action="/notes" method="POST">
-          <p>Topic: <input type="text" name="topics"></p>
-          <p>Description: <input type="text" name="content"></p>
-          <input class="btn btn-primary" type="submit" value="submit">
-        </form> -->
