@@ -1,7 +1,98 @@
-<h2>Creating a page!</h2>
-<h4>To continue, start typing in the box below</h4>
-<form action="/notes" method="POST">
-  <p>Topic: <input type="text" name="topics"></p>
-  <p>Description: <input type="text" name="content"></p>
-  <input class="btn btn-primary" type="submit" value="submit">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SurgiApp</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="../stylesheets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../stylesheets/pl-styles.css">
+</head>
+<main>
+        
+        
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">SurgiApp</a>
+
+      <form class="form-inline my-2 my-lg-0">
+          <a class="nav-link text-light" href="/note/new" role="button">Create</a>
+          <a class="nav-link text-light" href="#" role="button">Pages</a>
+          <a class="nav-link text-light mr-3" href="#" role="button">Profile</a>
+          <a class="btn btn-outline-light my-2 my-sm-0" href="/logout" role="button">Log out</a>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <br><br><br><br><br><br>
+    <h4>Create a page.</h4><br>
+
+    <form action="/notes" method="POST">
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="boxfortopic" id="inputGroup-sizing-default">Subject or Instrument</label>
+        </div>
+        <input type="text" name="topics" id="boxfortopic" class="form-control">
+      </div>
+
+      
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label style="height: 300px;" class="input-group-text" for="descbox">Description or Location of Instrument</label>
+        </div>
+        <textarea type="text" name="content" id="descbox" class="form-control"></textarea st>
+      </div>
+
+      <input class="btn btn-lg btn-primary" type="submit" value="submit">
+
+    </form>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+    </script>
+    <script>
+        // Enable Tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+        // Enable Popovers
+        $('[data-toggle="popover"]').popover();
+    </script>
+</main>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <h2>Creating a page!</h2>
+        <h4>To continue, start typing in the box below</h4>
+        <form action="/notes" method="POST">
+          <p>Topic: <input type="text" name="topics"></p>
+          <p>Description: <input type="text" name="content"></p>
+          <input class="btn btn-primary" type="submit" value="submit">
+        </form> -->
