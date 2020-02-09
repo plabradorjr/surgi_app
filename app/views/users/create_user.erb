@@ -1,7 +1,40 @@
-<h3>Sign Up Below!</h3>
-<form action="/signup" method="POST">
-  <p>Name: <input type="text" name="username"></p>
-  <p>Email: <input type="text" name="email"></p>
-  <p>Password: <input type="text" name="password"></p>
-  <input class="btn btn-primary" type="submit">
-</form>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">SurgiApp</a>
+  </div>
+</nav>
+
+<div id="main-container" class="container">
+  <br><br><br><br><br>
+  <h3>Create your account.</h3>
+  <br>
+  <form action="/signup" method="POST">
+    
+
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="plemailbox" id="inputGroup-sizing-default">Email</label>
+        </div>
+        <input type="text" name="email" id="plemailbox" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label for="pluserbox" class="input-group-text" id="inputGroup-sizing-default">Username</label>
+            </div>
+        <input type="text" name="username" id="pluserbox" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="plpassbox" id="inputGroup-sizing-default">Password</label>
+            </div>
+        <input type="text" name="password" id="plpassbox" class="form-control">
+    </div>
+    
+    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+
+
+
+  </form>
+</div>
