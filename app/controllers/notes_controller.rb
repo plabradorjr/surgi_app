@@ -96,6 +96,17 @@ class NotesController < ApplicationController
     end
   end
 
+  get '/all' do
+    if logged_in?
+      @note = Note.all
+      erb :'notes/show_all_notes'
+    else
+      redirect to '/login'
+    end    
+
+  end
+
+
 
 
 end 
