@@ -110,11 +110,12 @@ class NotesController < ApplicationController
   end
 
   post '/search' do
-    @query = Note.find_by(:topics => params[:searchquery])
+    x = params[:searchquery]
+    @query = Note.all.find{|i| i.topics.downcase.gsub(" ", "-") == x.downcase.gsub(" ", "-")}
     if @query
-      redirect to 'all'
+      erb :'notes/search_results'
     else
-      redirect to '/prohibited' ##temp redirect, just testing
+      redirect to '/noresult' 
     end
   end
 
