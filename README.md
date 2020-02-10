@@ -1,4 +1,4 @@
-# SurgiApp v0.0.1
+# 🏩 SurgiApp v0.0.1
 
 ## What is it?
 
