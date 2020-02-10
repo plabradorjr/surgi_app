@@ -30,7 +30,7 @@ After checking out the repo, run `bundle install` to install dependencies.
 
 Next, run `rake db:migrate` to create database.
 
-Finally, to view app on local your local host, run `shotgun` and head to the specified port.
+Finally, to view app on your local host, run `shotgun` and head to the specified port.
 
 ## Contributing
 
