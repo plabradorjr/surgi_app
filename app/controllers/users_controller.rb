@@ -66,5 +66,13 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/noresult' do
+    if logged_in?
+      erb :'notes/no_result'
+    else
+      redirect to '/'
+    end
+  end
+
 
 end 
