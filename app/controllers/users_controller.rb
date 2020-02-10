@@ -47,21 +47,24 @@ class UsersController < ApplicationController
   get '/logout' do
     if logged_in?
       session.destroy
-      redirect to '/login'
+      redirect to '/'
     else
       redirect to '/'
     end
   end
 
   get '/user/:slug' do
-    @user = User.find_by_slug(params[:slug])
-    if @user
-        erb :'users/show'
+    if logged_in?
+      @user = User.find_by_slug(params[:slug])
+      if @user
+          erb :'users/show'
+      else
+          erb :'/users/dontexist'
+      end
     else
-        erb :'/users/dontexist'
+      redirect to '/'
     end
   end
-
 
 
 end 

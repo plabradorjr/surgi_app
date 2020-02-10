@@ -12,16 +12,21 @@
 </head>
 <main>
   <!-- ##########  START HERE ##########-->
+<% name = current_user.username%>
+<% name_url = name.downcase.gsub(" ", "-")%>
+     
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/">SurgiApp</a>
       <form class="form-inline my-2 my-lg-0">
           <a class="nav-link text-light" href="/all" role="button">All items</a>
           <a class="nav-link text-light" href="/note/new" role="button">Create</a>
+          <a class="nav-link text-light" href="/user/<%=name_url%>" role="button">Profile</a>
           <a class="btn btn-outline-light my-2 my-sm-0" href="/logout" role="button">Log out</a>
       </form>
     </div>
   </nav>
+
 
   <div class="container">
     <div class="col mt-5">
@@ -29,7 +34,8 @@
         <div class="card-header"><h2><%= @note.topics %></h2></div>
         <div class="card-body">
           <span class="card-title" style="font-size: 50px;">💡</span><span class="h4"> Location:</span>
-          <p class="card-text"><%= @note.content %></p>
+          <p class="card-text"><%= @note.content %></p><br>
+          <p style="font-size: 11px;">last updated at: <%= @note.updated_at%></p>
         </div>
       </div>
       

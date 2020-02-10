@@ -92,6 +92,7 @@ class NotesController < ApplicationController
       @note = Note.find_by_id(params[:id])
       if @note && @note.user == current_user
         @note.delete
+        redirect to '/all'
       else 
         redirect to '/prohibited'
       end
