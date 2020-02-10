@@ -47,7 +47,7 @@ class NotesController < ApplicationController
   get '/note/:id/edit' do
     if logged_in?
       @note = Note.find_by_id(params[:id])
-      if @note ## && @note.user == current_user
+      if @note ## && @note.user == current_user //commented out so anyone can edit
         erb :'notes/edit_note'
       else
         redirect to '/prohibited' #temporary redirect
@@ -64,7 +64,7 @@ class NotesController < ApplicationController
         redirect to "/note/#{params[:id]}/edit"
       else
         @note = Note.find_by_id(params[:id])
-        if @note ## && @note.user == current_user (deleted so anyone can edit)
+        if @note ## && @note.user == current_user // commented out so anyone can edit
           if @note.update(content: params[:content], topics: params[:topics])
             redirect to "/note/#{@note.id}"
           else
@@ -107,7 +107,15 @@ class NotesController < ApplicationController
     else
       redirect to '/login'
     end    
+  end
 
+  post '/search' do
+    @query = Note.find_by(:topics => params[:searchquery])
+    if @query
+      redirect to 'all'
+    else
+      redirect to '/prohibited' ##temp redirect, just testing
+    end
   end
 
 

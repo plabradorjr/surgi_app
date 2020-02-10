@@ -33,10 +33,10 @@
         </div>
       </div>
       
-      <a class="btn btn-secondary text-white mb-2" href="/note/<%=@note.id%>/edit">Edit Card</a>
+      <a class="btn btn-secondary text-white mb-2" href="/note/<%=@note.id%>/edit">Edit</a>
       <form method="post" action="/note/<%=@note.id%>/delete">
         <input id="hidden" type="hidden" name="_method" value="DELETE">
-        <button type="submit" class="btn btn-danger btn-sm text-white">Delete card</button>
+        <button type="submit" class="btn btn-danger btn-sm text-white">Delete</button>
       </form>
 
     </div>
