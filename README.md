@@ -18,7 +18,7 @@ Every single day, there will be a staff member who will ask about where to find 
 
 ## Goal
 
-The goal is so we can help each nurses and tech grow, regardless of experience level. The more we contribute and organize our information, the better off we'll be. By building this simple collaborative inventory and search app, we can leverage on each others' collective wisdom. More data is not always better, what we are really looking for is forward-motion. I believe that if we adopt this site as a tool for information, we would be significantly better off than we were before.
+The goal is so we can help each nurses and tech grow, regardless of experience level. The more we contribute and organize our information, the better off we'll be. By building this simple collaborative inventory and search app, we can leverage on each others' collective wisdom. More data is not always better, what we are really looking for is forward-motion. I believe that if we adopt this app (or any other better app) as a tool for information, we would be significantly better off than we were before.
 
 ## Design overview
 
