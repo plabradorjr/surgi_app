@@ -22,7 +22,7 @@ The goal is so we can help each nurses and tech grow, regardless of experience l
 
 ## Design overview
 
-The app is deliberately designed so that collaboration is key to its usefulness. Without other peoples' contributions, this app leads nowhere, and information will remain outdated. 
+The app is deliberately designed so that collaboration is key to its usefulness. Anyone can edit any entries. Without other peoples' contributions, this app leads nowhere, and information will remain outdated. 
 
 # Installation
 
