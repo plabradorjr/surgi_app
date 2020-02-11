@@ -12,9 +12,11 @@ class UsersController < ApplicationController
     username_taken = User.find_by(:username => params[:username])
     email_taken = User.find_by(:email => params[:email])
     if username_taken
-        redirect to '/nametaken'
+        @error_message = "Sorry, that username is already taken."
+        erb :'/users/error_message'
     elsif email_taken
-        redirect to '/emailtaken'
+        @error_message = "Sorry, that email is already taken."
+        erb :'/users/error_message'
     elsif params[:username] == "" || params[:email] == "" || params[:password] == ""
       redirect to '/signup'
     else
@@ -40,7 +42,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect to "/home"
     else
-      redirect to '/signup'
+      @error_message = "Sorry, the username or password did not match our system."
+      erb :"users/error_message"
     end
   end
 
