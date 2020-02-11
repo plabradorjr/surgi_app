@@ -39,6 +39,6 @@ SurgiApp is deliberately designed so that collaboration is key to its usefulness
 
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## License
+## MIT License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The code is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
