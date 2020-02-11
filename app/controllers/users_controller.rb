@@ -80,6 +80,14 @@ class UsersController < ApplicationController
     erb :'users/show_all_users'
   end
 
-
+  get '/user/:username/edit' do
+     
+    if logged_in? && (params[:username] == current_user.username.downcase.gsub(" ","-"))
+      @user = User.find_by_id(current_user.id)
+      erb :'users/edit_user'
+    else
+      redirect to '/prohibited'
+    end
+  end
 
 end 
