@@ -9,18 +9,24 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    username_taken = User.find_by(:username => params[:username])
-    email_taken = User.find_by(:email => params[:email])
+    downcase_name = params[:username].downcase
+    downcase_email = params[:email].downcase
+    username_taken = User.find_by(:username => downcase_name)
+    email_taken = User.find_by(:email => downcase_email)
     if username_taken
         @error_message = "Sorry, that username is already taken."
         erb :'/users/error_message'
     elsif email_taken
         @error_message = "Sorry, that email is already taken."
         erb :'/users/error_message'
+    elsif downcase_name.include?(" ")
+        @error_message = "Sorry, username can only be one-word. Spaces not allowed. Please try again."
+        erb :'/users/error_message'
     elsif params[:username] == "" || params[:email] == "" || params[:password] == ""
-      redirect to '/signup'
+        @error_message = "Sorry, all fields must be filled out. Try again."
+        erb :'/users/error_message'
     else
-      @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+      @user = User.new(:username => downcase_name, :email => downcase_email, :password => params[:password])
       @user.save
       session[:user_id] = @user.id
       redirect to '/home'
@@ -37,9 +43,14 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    user = User.find_by(:username => params[:username])
+    downcase_name = params[:username].downcase
+    upcase_username = User.find_by(:username => params[:username])
+    user = User.find_by(:username => downcase_name)
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      redirect to "/home"
+    elsif upcase_username && upcase_username.authenticate(params[:password])
+      session[:user_id] = upcase_username.id
       redirect to "/home"
     else
       @error_message = "Sorry, the username or password did not match our system."
@@ -85,22 +96,28 @@ class UsersController < ApplicationController
 
   get '/user/:username/edit' do
      
-    if logged_in? && (params[:username] == current_user.username.downcase.gsub(" ","-"))
+    if logged_in? && (params[:username].downcase == current_user.username.downcase.gsub(" ","-"))
       @user = User.find_by_id(current_user.id)
       erb :'users/edit_user'
     else
-      redirect to '/prohibited'
+      @error_message = "Sorry, only the original user can perform that delete/edit operation."
+      erb :'notes/prohibited'
     end
   end
 
   patch '/saved' do
 
     if logged_in?
+      downcase_name = params[:username].downcase
       if params[:username] == ""
-        'Username cannot be blank, press the back browser button.'
+        @error_message = 'Username cannot be blank, press the back browser button.'
+        erb :'notes/prohibited'
+      elsif downcase_name.include?(" ")
+        @error_message = 'Username can only be one-word. Spaces not allowed. Press the back browser button.'
+        erb :'notes/prohibited'
       else
         @user = User.find_by_id(current_user.id)
-        @user.update(username: params[:username], bio: params[:bio])
+        @user.update(username: downcase_name, bio: params[:bio])
         erb :"users/show_individual_user"
       end
     else

@@ -47,10 +47,11 @@ class NotesController < ApplicationController
   get '/note/:id/edit' do
     if logged_in?
       @note = Note.find_by_id(params[:id])
-      if @note ## && @note.user == current_user //commented out so anyone can edit
+      if @note ## && @note.user == current_user #commented out so anyone can edit
         erb :'notes/edit_note'
       else
-        redirect to '/prohibited' #temporary redirect
+        @error_message = "This entry was deleted by the original user."
+        erb :'notes/prohibited' 
       end
     else
       redirect to '/login'
@@ -79,13 +80,6 @@ class NotesController < ApplicationController
     end
   end
 
-  get '/prohibited' do
-    if logged_in?
-      erb :'notes/prohibited'
-    else
-      redirect to '/login'
-    end 
-  end
 
   delete '/note/:id/delete' do
     if logged_in?
@@ -94,7 +88,8 @@ class NotesController < ApplicationController
         @note.delete
         redirect to '/all'
       else 
-        redirect to '/prohibited'
+        @error_message = "Sorry, only the original user can perform that delete/edit operation."
+        erb :'notes/prohibited'
       end
     else
       redirect to '/login'
