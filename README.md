@@ -12,7 +12,7 @@ SurgiApp is an open-content collaborative database. A simple content management 
 
 This app is built for new operating room nurses and surgical techs (orientees and travelers) working at my current job. Within our Operating Room department, there are millions worth of medical supplies and equipments stored in multiple different shelves, rooms, and building floor-levels. None of the storage areas are exactly identical in layouts. For newer staffs, it becomes very easy to get lost trying to find equipments. 
 
-Instead of focusing on patient care or other medical related tasks, we continually lose time trying to find simple items. There are no documentations to where the supplies are located. It's a simple problem that can be solved with a ruthleslly minimalistic CMS. Our department will always have new hires that can benefit from a search engine and database to effectively find a specific item. 
+Instead of focusing on patient care or other medical related tasks, we continually lose time trying to find simple items. There are no documentations to where the supplies are located. It's a simple problem that can be solved with a ruthlessly minimalistic CMS. Our department will always have new hires that can benefit from a search engine and database to effectively find a specific item. 
 
 ## Goal
 
