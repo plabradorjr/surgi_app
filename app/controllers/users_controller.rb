@@ -57,7 +57,7 @@ class UsersController < ApplicationController
     if logged_in?
       @user = User.find_by_slug(params[:slug])
       if @user
-          erb :'users/show'
+          erb :'users/show_individual_user'
       else
           erb :'/users/dontexist'
       end
@@ -74,8 +74,10 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/users/:username' do
-    binding.pry
+  get '/users' do
+    @all_users = User.all
+
+    erb :'users/show_all_users'
   end
 
 
