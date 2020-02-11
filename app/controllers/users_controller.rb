@@ -74,5 +74,10 @@ class UsersController < ApplicationController
     end
   end
 
+  get '/users/:username' do
+    binding.pry
+  end
+
+
 
 end 
