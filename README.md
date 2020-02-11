@@ -8,13 +8,13 @@ SurgiApp is an open-content collaborative database. A simple content management 
 
 ## Problem Overview
 
-This app is not for everyone, it is built for new operating room nurses and surgical techs (orientees and travelers) working at my current job. Within our Operating Room department, there are millions worth of supplies and equipments stored in multiple different rooms and different floor levels. None of the rooms are exactly identical in layouts. For newer staffs, it becomes very easy to get lost trying to find equipments. 
+This app is built for new operating room nurses and surgical techs (orientees and travelers) working at my current job. Within our Operating Room department, there are millions worth of medical supplies and equipments stored in multiple different rooms and different floor levels. None of the rooms are exactly identical in layouts. For newer staffs, it becomes very easy to get lost trying to find equipments. 
 
-Instead of focusing on patient care or other medical related tasks, we lose time trying to find simple items. There are no documentations to where the supplies are located. Its a simple problem that hasn't been solved yet. We will always have new hires and even seasoned staffs that can benefit from a search engine and database to effectively locate a specific item. 
+Instead of focusing on patient care or other medical related tasks, we continually lose time trying to find simple items. There are no documentations to where the supplies are located. It's a simple problem that still hasn't been solved yet. We will always have new hires and seasoned staffs that can benefit from a search engine and database to effectively locate a specific item. 
 
 ## Goal
 
-The goal is so we can help each nurses and tech grow, regardless of experience level. The more we contribute and organize our information, the better off we'll be. By building this simple collaborative inventory and search app, we can leverage on each others' collective wisdom. More data is not always better, what we are really looking for is forward-motion. I believe that if we adopt this app (or any other better app) as a tool for information, we would be significantly better off than we were before.
+The goal is so we can help each nurses and tech grow, regardless of experience level . The more we contribute and organize our information, the better off we'll be. More data is not always better, what we are really looking for is forward-motion. 
 
 >“Train people well enough so they can leave, treat them well enough, so they don't want to”. — Richard Branson
 
