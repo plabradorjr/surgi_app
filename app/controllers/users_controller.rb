@@ -90,4 +90,25 @@ class UsersController < ApplicationController
     end
   end
 
+  patch '/saved' do
+
+    if logged_in? && current_user
+      if params[:username] == ""
+        redirect to "/note/#{params[:id]}/edit" ##need to edit
+      else
+        @user = User.find_by_id(current_user.id)
+          if @user.update(username: params[:username], email: params[:email])
+            erb :"users/saved"
+          else
+            redirect to "/prohibited" ##need to edit
+          end
+      end
+    else
+      redirect to '/login'
+    end
+  end
+
+
+
+
 end 
