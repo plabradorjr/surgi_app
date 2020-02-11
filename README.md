@@ -2,7 +2,7 @@
 
 ## What is it?
 
-SurgiApp is an open-content collaborative database. A simple content management system. While at a minimum viable product phase, it is designed to keep track of instruments and its' exact location.
+SurgiApp is an open-content collaborative database. A simple content management system. This Minimal Viable Product is designed to keep track of instruments and its' exact location.
 
 # Purpose
 
@@ -22,7 +22,7 @@ The goal is so we can help each nurses and tech grow, regardless of experience l
 
 ## Design overview
 
-The app is deliberately designed so that collaboration is key to its usefulness. Anyone can edit any entries. Without other peoples' contributions, this app leads nowhere, and information will remain outdated. 
+SurgiApp is deliberately designed so that collaboration is key to its usefulness. Anyone can edit any entries. Without other peoples' contributions, this app leads nowhere, and information will remain outdated. 
 
 # Installation
 
