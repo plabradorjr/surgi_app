@@ -16,7 +16,7 @@ Instead of focusing on patient care or other medical related tasks, we continual
 
 ## Goal
 
-The goal is so we can help each nurses and tech grow, regardless of experience level . The more we contribute and organize our information, the better off we'll be. More data is not always better, what we are really looking for is forward-motion. 
+The goal is to help nurses and surgical techs grow, regardless of experience level . The more we contribute and organize our information, the better off we'll be. More data is not always better, what we are really looking for is forward-motion. 
 
 >“Train people well enough so they can leave, treat them well enough, so they don't want to”. — Richard Branson
 
