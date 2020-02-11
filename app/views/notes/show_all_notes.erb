@@ -24,8 +24,9 @@
           <a class="nav-link text-light" href="/users" role="button">All users</a>
           <a class="nav-link text-light" href="/user/<%=name_url%>" role="button">My profile</a>
           <a class="btn btn-outline-success mr-3" href="/note/new" role="button">Create</a>
-
           <a class="btn btn-outline-light my-sm-0" href="/logout" role="button">Log out</a>
+          <a class="nav-link text-light mr" href="/user/<%=name_url%>/edit" role="button">⚙</a>
+
       </form>
     </div>
   </nav>
@@ -34,7 +35,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center">
-        <br><span style="font-size: 50px;"> 🎉</span><span class="h4 text-secondary">All equipments</span><br><br>
+        <br><span style="font-size: 50px;"> 🎉</span><span class="h4 text-secondary">All items</span><br><br>
         </div>
 
         <% @note.each do |i| %> 
@@ -49,6 +50,8 @@
                 </div>
             </div>
         <% end %>
+        <p class="mt-5">Don't see what you're looking for? Consider <a href="/note/new">creating an inventory</a>.</p>
+
     </div>     
 </div>
 

@@ -94,14 +94,11 @@ class UsersController < ApplicationController
 
     if logged_in? && current_user
       if params[:username] == ""
-        redirect to "/note/#{params[:id]}/edit" ##need to edit
+        'Username cannot be blank, press the back browser button.'
       else
         @user = User.find_by_id(current_user.id)
-          if @user.update(username: params[:username], email: params[:email])
-            erb :"users/saved"
-          else
-            redirect to "/prohibited" ##need to edit
-          end
+        @user.update(username: params[:username], bio: params[:bio])
+        erb :"users/show_individual_user"
       end
     else
       redirect to '/login'

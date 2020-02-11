@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SurgiApp</title>
   <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
-  <link rel="stylesheet" href="../stylesheets/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../stylesheets/pl-styles.css">
 </head>
 <main>
@@ -24,8 +23,9 @@
           <a class="nav-link text-light" href="/users" role="button">All users</a>
           <a class="nav-link text-light" href="/user/<%=name_url%>" role="button">My profile</a>
           <a class="btn btn-outline-success mr-3" href="/note/new" role="button">Create</a>
-
           <a class="btn btn-outline-light my-sm-0" href="/logout" role="button">Log out</a>
+          <a class="nav-link text-light mr" href="/user/<%=name_url%>/edit" role="button">⚙</a>
+
       </form>
     </div>
   </nav>
@@ -33,21 +33,22 @@
 
   <div class="container">
     <div class="row">
+      <div class="col-12 text-center">
+        <br><span style="font-size: 50px;"> 🎉</span><span class="h4 text-secondary">All users</span><br><br>
+        </div>
+      </div>
       <div class="col">
-        <br><br><br><br><br>
+        <br>
         
         <div class="list-group">
-            <a class="list-group-item list-group-item-dark">All users and contributor:</a>
+            <a class="list-group-item list-group-item-dark">Username:</a>
           <% @all_users.each do |i| %>
           
             <a href="/user/<%=i.username.downcase.gsub(" ","-")%>" class="list-group-item list-group-item-action"><%= i.username %></a>
-          
+  
           <% end %>
         </div>
         <br><br>
-        <p>Don't see any contributions? Consider <a href="/note/new">creating or adding more</a>.</p>
-
-
 
       </div>
     </div>
