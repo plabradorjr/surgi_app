@@ -1,6 +1,6 @@
 # 🏩 SurgiApp v0.0.1
 
-This is my Flatiron Bootcamp Project on Sinatra and ActiveRecord
+This is a Flatiron School Project on the topics of Sinatra and ActiveRecord.
 
 ## What is it?
 
