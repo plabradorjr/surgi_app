@@ -92,7 +92,7 @@ class UsersController < ApplicationController
 
   patch '/saved' do
 
-    if logged_in? && current_user
+    if logged_in?
       if params[:username] == ""
         'Username cannot be blank, press the back browser button.'
       else
