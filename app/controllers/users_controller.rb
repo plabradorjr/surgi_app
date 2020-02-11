@@ -44,13 +44,9 @@ class UsersController < ApplicationController
 
   post '/login' do
     downcase_name = params[:username].downcase
-    upcase_username = User.find_by(:username => params[:username])
     user = User.find_by(:username => downcase_name)
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to "/home"
-    elsif upcase_username && upcase_username.authenticate(params[:password])
-      session[:user_id] = upcase_username.id
       redirect to "/home"
     else
       @error_message = "Sorry, the username or password did not match our system."
@@ -100,8 +96,7 @@ class UsersController < ApplicationController
       @user = User.find_by_id(current_user.id)
       erb :'users/edit_user'
     else
-      @error_message = "Sorry, only the original user can perform that delete/edit operation."
-      erb :'notes/prohibited'
+      "Sorry, only the original user can perform that delete/edit operation. Press the browser back button."
     end
   end
 
