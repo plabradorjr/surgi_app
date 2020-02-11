@@ -37,7 +37,12 @@ class NotesController < ApplicationController
   get '/note/:id' do
     if logged_in?
       @note = Note.find_by_id(params[:id])
-      erb :'notes/show_note'
+      if @note
+        erb :'notes/show_note'
+      else
+        @error_message = "Sorry, this item doesn't exist yet."
+        erb :'notes/prohibited'
+      end
     else
       redirect to '/login'
     end
