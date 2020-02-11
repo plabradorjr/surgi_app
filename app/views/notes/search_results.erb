@@ -46,6 +46,7 @@
                             <span class="card-title" style="font-size: 50px;">💡</span><span class="h4"> Location:</span>
                             <p class="card-text"><%= @query.content %></p>
                             <br>
+                            <p style="font-size: 11px;">Originally created by: <%=@query.user.username%></p>
                             <p style="font-size: 11px;">last updated at: <%= @query.updated_at%></p>
                         </div>
                     </div>

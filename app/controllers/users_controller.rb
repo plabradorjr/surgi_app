@@ -106,26 +106,14 @@ class UsersController < ApplicationController
   end
 
   patch '/saved' do
-
     if logged_in?
-      downcase_name = params[:username].downcase
-      if params[:username] == ""
-        @error_message = 'Username cannot be blank, press the back browser button.'
-        erb :'notes/prohibited'
-      elsif downcase_name.include?(" ")
-        @error_message = 'Username can only be one-word. Spaces not allowed. Press the back browser button.'
-        erb :'notes/prohibited'
-      else
-        @user = User.find_by_id(current_user.id)
-        @user.update(username: downcase_name, bio: params[:bio])
-        erb :"users/show_individual_user"
-      end
+      @user = User.find_by_id(current_user.id)
+      @user.update(bio: params[:bio])
+      erb :"users/show_individual_user"
     else
       redirect to '/login'
     end
   end
-
-
 
 
 end 

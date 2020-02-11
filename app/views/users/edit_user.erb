@@ -35,23 +35,17 @@
 
   <div class="container">
     <br><br><br><br><br><br>
-    <h4 class="text-warning">Edit my profile.</h4><br>
+    <h4 class="text-warning">Edit <%=@user.username.capitalize%>'s Bio.</h4><br>
 
     <form action="/saved" method="POST">
       <input id="hidden" type="hidden" name="_method" value="PATCH">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="boxforusername" id="inputGroup-sizing-default">Username</label>
-        </div>
-        <input type="text" name="username" id="boxforusername" class="form-control" value="<%= @user.username %>" >
-      </div>
 
       
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <label style="height: 200px;" class="input-group-text" for="descbox">Bio</label>
         </div>
-        <textarea type="text" name="bio" id="descbox" class="form-control"><%= @user.bio %> </textarea>
+        <textarea type="text" name="bio" id="descbox" class="form-control"><%=@user.bio%></textarea>
       </div>
 
       <input class="btn btn-lg btn-primary" type="submit" value="submit">
