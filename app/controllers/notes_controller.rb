@@ -96,9 +96,10 @@ class NotesController < ApplicationController
       @note = Note.find_by_id(params[:id])
       if @note && @note.user == current_user
         @note.delete
-        redirect to '/note'
+        @message = "Successfully deleted!" # this isn't really an error message, i'm just using a prefilled html page.
+        erb :'notes/delete_prohibited'
       else 
-        @error_message = "Sorry, only the original user can delete that form."
+        @message = "Sorry, only the original user can delete that form."
         erb :'notes/delete_prohibited'
       end
     else
@@ -111,7 +112,7 @@ class NotesController < ApplicationController
       @note = Note.all
       erb :'notes/show_all_notes'
     else
-      redirect to '/login'
+      redirect to '/'
     end    
   end
 

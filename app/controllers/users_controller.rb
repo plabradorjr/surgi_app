@@ -85,18 +85,21 @@ class UsersController < ApplicationController
   end
 
   get '/users' do
-    @all_users = User.all
-
-    erb :'users/show_all_users'
+    if logged_in?
+      @all_users = User.all
+      erb :'users/show_all_users'
+    else 
+      redirect to '/'
+    end
   end
 
   get '/user/:username/edit' do
      
-    if logged_in? && (params[:username].downcase == current_user.username.downcase.gsub(" ","-"))
+    if logged_in? && (params[:username].downcase == current_user.username.downcase)
       @user = User.find_by_id(current_user.id)
       erb :'users/edit_user'
     else
-      "Sorry, only the original user can perform that delete/edit operation. Press the browser back button."
+      "Sorry, you are not allowed to edit other people's profile."
     end
   end
 
