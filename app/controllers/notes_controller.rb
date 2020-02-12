@@ -71,17 +71,12 @@ class NotesController < ApplicationController
 
   patch '/note/:id' do
     if logged_in?
-      downcase_topic = params[:topics].downcase
-      topic_already_made = Note.find_by(:topics => downcase_topic)
       if params[:content] == ""
         redirect to "/note/#{params[:id]}/edit"
-      elsif topic_already_made
-        @error_message = 'This topic has already been made. Try searching or choose a different name.'
-        erb :'notes/prohibited'
       else
         @note = Note.find_by_id(params[:id])
         if @note ## && @note.user == current_user // commented out so anyone can edit
-          if @note.update(content: params[:content], topics: downcase_topic)
+          if @note.update(content: params[:content])
             redirect to "/note/#{@note.id}"
           else
             redirect to "/note/#{@note.id}/edit"
