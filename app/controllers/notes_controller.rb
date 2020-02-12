@@ -93,8 +93,8 @@ class NotesController < ApplicationController
         @note.delete
         redirect to '/all'
       else 
-        @error_message = "Sorry, only the original user can perform that delete/edit operation."
-        erb :'notes/prohibited'
+        @error_message = "Sorry, only the original user can delete that form."
+        erb :'notes/delete_prohibited'
       end
     else
       redirect to '/login'
