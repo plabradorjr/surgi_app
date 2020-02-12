@@ -34,7 +34,7 @@
   <div class="container">
     <div class="col mt-5">
       <div class="card text-white bg-secondary mb-2">
-        <div class="card-header"><h2><%= @note.topics %></h2></div>
+        <div class="card-header"><h2><%= @note.topics.capitalize %></h2></div>
         <div class="card-body">
           <span class="card-title" style="font-size: 50px;">💡</span><span class="h4"> Location:</span>
           <p class="card-text"><%= @note.content %></p><br>

@@ -45,7 +45,7 @@
             <a class="list-group-item list-group-item-dark">Inventories:</a>
           <% @note.each do |i| %>
           
-            <a href="/note/<%=i.id%>" class="list-group-item list-group-item-action"><%= i.topics %></a>
+            <a href="/note/<%=i.id%>" class="list-group-item list-group-item-action"><%= i.topics.capitalize %></a>
   
           <% end %>
         </div>
