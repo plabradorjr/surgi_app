@@ -13,11 +13,11 @@
 
 <!-- START HERE -->
 <% name = current_user.username%>
-<% name_url = name.downcase.gsub(" ", "-")%>
+<% name_url = name.downcase%>
      
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/">SurgiApp</a>
+      <a class="navbar-brand" href="/">🔭 SurgiApp</a>
       <form class="form-inline my-2 my-lg-0">
           <a class="nav-link text-light" href="/note" role="button">All items</a>
           <a class="nav-link text-light" href="/users" role="button">All users</a>
@@ -44,7 +44,7 @@
             <a class="list-group-item list-group-item-dark">Username:</a>
           <% @all_users.each do |i| %>
           
-            <a href="/user/<%=i.username.downcase.gsub(" ","-")%>" class="list-group-item list-group-item-action"><%= i.username %></a>
+            <a href="/user/<%=i.username.downcase%>" class="list-group-item list-group-item-action"><%= i.username.capitalize %></a>
   
           <% end %>
         </div>

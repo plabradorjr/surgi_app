@@ -112,6 +112,7 @@ class NotesController < ApplicationController
 
   post '/search' do
     x = params[:searchquery]
+    # @query = Note.where("topics LIKE?", params[:searchquery]) ## this work just like the below code. keeping this for future use.
     @query = Note.all.find{|i| i.topics.downcase.gsub(" ", "-") == x.downcase.gsub(" ", "-")}
     if @query
       erb :'notes/search_results'

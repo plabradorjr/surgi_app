@@ -13,11 +13,11 @@
 <main>
   <!-- ##########  START HERE ##########-->
 <% name = current_user.username%>
-<% name_url = name.downcase.gsub(" ", "-")%>
+<% name_url = name.downcase%>
      
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/">SurgiApp</a>
+      <a class="navbar-brand" href="/">🔭 SurgiApp</a>
       <form class="form-inline my-2 my-lg-0">
           <a class="nav-link text-light" href="/note" role="button">All items</a>
           <a class="nav-link text-light" href="/users" role="button">All users</a>
@@ -38,7 +38,7 @@
         <div class="card-body">
           <span class="card-title" style="font-size: 50px;">💡</span><span class="h4"> Location:</span>
           <p class="card-text"><%= @note.content %></p><br>
-          <p style="font-size: 11px;">Originally created by: <%=@note.user.username%></p>
+          <p style="font-size: 11px;">Originally created by: <%=@note.user.username.capitalize%></p>
           <p style="font-size: 11px;">Last updated: <%= @note.updated_at%></p>
 
         </div>
