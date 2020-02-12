@@ -8,9 +8,12 @@ gem "bcrypt"
 gem "require_all"
 gem "capybara"
 gem "pry"
-gem 'sqlite3', '~> 1.3.6'
 gem 'shotgun'
+gem "sqlite3", '~> 1.3.6'
+
 
 group :development do
   gem "tux"
 end
+
+
