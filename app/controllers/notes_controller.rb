@@ -96,7 +96,7 @@ class NotesController < ApplicationController
       @note = Note.find_by_id(params[:id])
       if @note && @note.user == current_user
         @note.delete
-        redirect to '/all'
+        redirect to '/note'
       else 
         @error_message = "Sorry, only the original user can delete that form."
         erb :'notes/delete_prohibited'
