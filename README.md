@@ -26,9 +26,7 @@ The goal is to help nurses and surgical techs grow, regardless of experience lev
 
 After checking out the repo, run `bundle install` to install dependencies.
 
-Next, run `rake db:migrate` to create database.
-
-Finally, to view app on your local host, run `shotgun` and head to the specified port.
+To view app on your local host, run `shotgun` and head to the specified port.
 
 ## Design overview
 
