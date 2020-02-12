@@ -6,6 +6,8 @@ This is a Flatiron School Project on the topics of Sinatra and ActiveRecord.
 
 SurgiApp is an open-content collaborative database. A simple content management system (CMS). This Minimum Viable Product is designed to keep track of instruments and its' exact location.
 
+![landing page](https://raw.githubusercontent.com/plabradorjr/blog_images/master/surgi_app_index.png)
+
 # Purpose
 
 ## Problem Overview
