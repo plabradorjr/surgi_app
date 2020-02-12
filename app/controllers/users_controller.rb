@@ -19,8 +19,8 @@ class UsersController < ApplicationController
     elsif email_taken
         @error_message = "Sorry, that email is already taken."
         erb :'/users/error_message'
-    elsif downcase_name.include?(" ")
-        @error_message = "Sorry, username can only be one-word. Spaces not allowed. Please try again."
+    elsif !valid_login?(params[:username])
+        @error_message = "Sorry, special characters are not allowed in username. Choose only words, underscore and numbers. Please try again."
         erb :'/users/error_message'
     elsif params[:username] == "" || params[:email] == "" || params[:password] == ""
         @error_message = "Sorry, all fields must be filled out. Try again."

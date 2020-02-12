@@ -30,6 +30,11 @@ configure do
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
+    def valid_login?(str)
+      return true if (/^\w*$/.match(str))
+      return false
+    end
+
   end
 
 end 
