@@ -37,32 +37,25 @@
     <h4>Create an inventory.</h4><br>
 
     <form action="/notes" method="POST">
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="boxfortopic" id="inputGroup-sizing-default">Instrument</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="boxfortopic" id="inputGroup-sizing-default">Instrument</label>
+          </div>
+          <input type="text" name="topics" id="boxfortopic" class="form-control">
         </div>
-        <input type="text" name="topics" id="boxfortopic" class="form-control">
-      </div>
 
-      
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label style="height: 300px;" class="input-group-text" for="descbox">Location</label>
+        
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label style="height: 300px;" class="input-group-text" for="descbox">Location</label>
+          </div>
+          <textarea type="text" name="content" id="descbox" class="form-control"></textarea st>
         </div>
-        <textarea type="text" name="content" id="descbox" class="form-control"></textarea st>
-      </div>
 
-      <input class="btn btn-lg btn-primary" type="submit" value="submit">
-
+        <input class="btn btn-lg btn-primary" type="submit" value="submit">
     </form>
 
   </div>
-
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
