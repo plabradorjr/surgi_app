@@ -3,7 +3,7 @@ ruby "2.6.1"
 
 
 gem "sinatra"
-gem "activerecord", '<= 5.1'
+gem "activerecord", '<= 5.3'
 gem "sinatra-activerecord"
 gem "bcrypt"
 gem "require_all"
